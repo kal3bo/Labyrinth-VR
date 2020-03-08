@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class BoardControl : MonoBehaviour
 {
-    public Vector3 _CurrentRotation;
+    private Vector3 _CurrentRotation;
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         _CurrentRotation = GetComponent<Transform>().eulerAngles;
 
         // Cases:
-        if((Input.GetKey(KeyCode.W)) && (_CurrentRotation.z <= 10 || _CurrentRotation.z >= 348))
+        if((Input.GetKey(KeyCode.W)) && (_CurrentRotation.x <= 20 || _CurrentRotation.x >= 338))
         {
             transform.Rotate(1, 0, 0);
         }
 
-        if ((Input.GetKey(KeyCode.S)) && (_CurrentRotation.z >= 349 || _CurrentRotation.z <= 11))
+        else if ((Input.GetKey(KeyCode.S)) && (_CurrentRotation.x >= 339 || _CurrentRotation.x <= 21))
         {
             transform.Rotate(-1, 0, 0);
+        }
+
+        else if ((Input.GetKey(KeyCode.A)) && (_CurrentRotation.z <= 20 || _CurrentRotation.z >= 338))
+        {
+            transform.Rotate(0, 0, 1);
+        }
+
+        else if ((Input.GetKey(KeyCode.D)) && (_CurrentRotation.z >= 339 || _CurrentRotation.z <= 21))
+        {
+            transform.Rotate(0, 0, -1);
         }
     }
 }
