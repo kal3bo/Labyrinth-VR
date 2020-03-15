@@ -2,10 +2,7 @@
 
 public class Hole : MonoBehaviour
 {
-    [SerializeField]
     public int holeNumber;
-
-    [SerializeField]
     public Score scoreManager;
 
     private void OnTriggerEnter(Collider other)

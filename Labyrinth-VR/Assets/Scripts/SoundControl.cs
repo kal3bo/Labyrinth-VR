@@ -10,8 +10,11 @@ public class SoundControl : MonoBehaviour
     {
         _ThisRigidBody = GetComponent<Rigidbody>();
     }
-    
-    // Update is called once per frame
+
+    /// <summary>
+    /// Sound of ball rolling when the ball
+    /// has certain amount of velocity.
+    /// </summary>
     void Update()
     {
         
@@ -26,6 +29,10 @@ public class SoundControl : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Whenever the ball hits hard enough to make a sound
+    /// play a specific sound.
+    /// </summary>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.impulse.magnitude > 2)

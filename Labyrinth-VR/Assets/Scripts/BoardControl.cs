@@ -9,7 +9,7 @@ public class BoardControl : MonoBehaviour
     {
         _CurrentRotation = GetComponent<Transform>().eulerAngles;
 
-        // Cases:
+        // Cases, depending in which key the user presses:
         if((Input.GetKey(KeyCode.W)) && (_CurrentRotation.x <= 20 || _CurrentRotation.x >= 338))
         {
             transform.Rotate(1, 0, 0);
